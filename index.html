@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>House Style Selector</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div style="text-align:center; padding:40px;">
+    <button onclick="startWizard()">Choose a House Style</button>
+  </div>
+
+  <div id="modal">
+    <div class="modal-content">
+      <div id="question1" class="question active">
+        <h3>What house style do you prefer?</h3>
+        <select id="styleSelect">
+          <option value="Modern">Modern</option>
+          <option value="Farmhouse">Farmhouse</option>
+          <option value="Traditional">Traditional</option>
+        </select>
+        <button onclick="nextQuestion(1)">Next</button>
+      </div>
+
+      <div id="question2" class="question">
+        <h3>How many bedrooms?</h3>
+        <select id="bedSelect">
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4+</option>
+        </select>
+        <button onclick="nextQuestion(2)">Next</button>
+      </div>
+
+      <div id="question3" class="question">
+        <h3>Enter Your Property Address</h3>
+        <input type="text" id="propertyAddress" placeholder="123 Main St, Sarasota, FL">
+        <h4>OR Upload Site Survey Plan</h4>
+        <input type="file" id="surveyUpload">
+        <button onclick="finishWizard()">Finish</button>
+      </div>
+
+      <div id="spinner" class="spinner" style="display:none;"></div>
+    </div>
+  </div>
+
+  <div id="resultGallery">
+    <div style="padding:20px; text-align:center;">
+      <h2>Your Matching House Plans</h2>
+    </div>
+    <div class="gallery" id="galleryContent"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
